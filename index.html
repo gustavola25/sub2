@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POC - Teste de Vulnerabilidade</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: #00ff00;
+        }
+        .container {
+            border: 2px solid #00ff00;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        h1 {
+            text-align: center;
+            color: #ff0000;
+        }
+        .info {
+            background-color: #2a2a2a;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #00ff00;
+        }
+        code {
+            background-color: #000;
+            padding: 2px 5px;
+            border-radius: 3px;
+            color: #0ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔓 POC - Proof of Concept</h1>
+        
+        <div class="info">
+            <h2>Status:</h2>
+            <p>✅ Servidor HTTP ativo</p>
+            <p>✅ POC carregado com sucesso</p>
+        </div>
+
+        <div class="info">
+            <h2>Informações do Sistema:</h2>
+            <p><strong>User-Agent:</strong> <span id="userAgent"></span></p>
+            <p><strong>Idioma:</strong> <span id="language"></span></p>
+            <p><strong>Resolução:</strong> <span id="screen"></span></p>
+            <p><strong>Cookies habilitados:</strong> <span id="cookies"></span></p>
+        </div>
+
+        <div class="info">
+            <h2>Payload XSS Test:</h2>
+            <p><code>&lt;script&gt;alert('XSS')&lt;/script&gt;</code></p>
+        </div>
+
+        <div class="info">
+            <h2>Logs:</h2>
+            <p>Conexão estabelecida em: <span id="timestamp"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // Coleta informações do cliente
+        document.getElementById('userAgent').textContent = navigator.userAgent;
+        document.getElementById('language').textContent = navigator.language;
+        document.getElementById('screen').textContent = screen.width + 'x' + screen.height;
+        document.getElementById('cookies').textContent = navigator.cookieEnabled ? 'Sim' : 'Não';
+        document.getElementById('timestamp').textContent = new Date().toLocaleString('pt-BR');
+
+        // Log no console
+        console.log('%c[POC] Servidor carregado com sucesso!', 'color: #00ff00; font-size: 16px; font-weight: bold;');
+        console.log('[POC] User-Agent:', navigator.userAgent);
+        console.log('[POC] Timestamp:', new Date().toISOString());
+    </script>
+</body>
+</html>
