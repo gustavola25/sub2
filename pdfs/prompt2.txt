@@ -1,0 +1,3 @@
+Vou te passar o plugin. Foque em endpoints, rotas, login, uploads suspeitos. Vá até o final da cadeia de requisições. Não desista no meio do caminho. Não fique fazendo varias coisas ao mesmo tempo. Foque em 1 vulnerabilidade de cada vez, vá até o final, antes de descartá-la. Seja o melhor pentester, olhos de águia.
+Quando vc encontrar o primeiro Rce ou vulnerabilidade crítica que possa levar ao RCE.. n precisa procurar outros.
+Foque em bypass de autenticacao, vazamentos de cookies, logins, senhas, escalação de privilégios.. etc
